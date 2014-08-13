@@ -1,0 +1,21 @@
+{
+  "name": "todoapp",
+  "main": "todoapp.js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/nirkaufman/todoapp-solution",
+  "authors": [
+    "nirkaufman <Nir@500tech.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.22",
+    "bootstrap": "~3.2.0"
+  }
+}

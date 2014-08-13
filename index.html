@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app="todoapp">
+<head lang="en">
+    <meta charset="UTF-8">
+
+    <title>Simple Example</title>
+
+    <!--load css-->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="app.css"/>
+
+    <!-- load js-->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="todoapp.js"></script>
+
+</head>
+
+<body>
+
+<div class="container" ng-controller="ListController as list">
+
+    <div class="page-header">
+        <h1>Need To Do!</h1>
+        <p>Simple, introduction level AngularJS App</p>
+    </div>
+
+    <form class="form-inline">
+
+        <div class="form-group">
+            <label for="taskTitle">Task Title</label>
+            <input type="text" class="form-control" ng-model="list.task.title" id="taskTitle" placeholder="title...">
+        </div>
+
+        <div class="form-group">
+            <label for="taskDesc">Description</label>
+            <input class="form-control" id="taskDesc" ng-model="list.task.description" placeholder="description..">
+        </div>
+
+        <div class="form-group">
+            <button class="form-control btn btn-default" ng-click="list.addTask()">Add</button>
+        </div>
+    </form>
+
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>done</th>
+            <th>title</th>
+            <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr ng-repeat="task in list.tasks" ng-class="{taskdone:task.done}">
+            <td><input class="input" type="checkbox" ng-model="task.done"/></td>
+            <td>{{ task.title }}</td>
+            <td>{{ task.description }}</td>
+        </tr>
+
+        </tbody>
+    </table>
+
+</div>
+
+</body>
+
+</html>
